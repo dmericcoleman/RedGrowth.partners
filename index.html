@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
     <title>Reddit Growth Partners | B2B Community Marketing</title>
-
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MH4TT4CG');</script>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/favicon.svg">
     <meta name="description" content="Dominate Reddit with 100% brand-safe community marketing. Drive traffic, build authority, and generate evergreen SEO with our B2B Reddit growth strategies.">
@@ -84,17 +78,8 @@
         }
     </style>
 
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "wanlhefpw8");
-    </script>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MH4TT4CG"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -656,6 +641,37 @@
         }
       });
     }
+  </script>
+
+  <script>
+      let trackingLoaded = false;
+
+      function loadTracking() {
+          if (trackingLoaded) return;
+          trackingLoaded = true;
+
+          // 1. Inject Google Tag Manager
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-MH4TT4CG');
+
+          // 2. Inject Microsoft Clarity
+          (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "wanlhefpw8");
+      }
+
+      // Trigger tracking on first user interaction
+      ['scroll', 'mousemove', 'touchstart', 'keydown'].forEach(event => {
+          window.addEventListener(event, loadTracking, { once: true, passive: true });
+      });
+
+      // Fallback: If the user does absolutely nothing for 4 seconds, load it anyway
+      setTimeout(loadTracking, 4000);
   </script>
 </body>
 </html>
