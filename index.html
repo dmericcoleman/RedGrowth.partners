@@ -22,13 +22,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
         .reddit-orange { color: #FF4500; }
@@ -100,9 +96,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
 
-    <nav class="fixed top-0 w-full h-20 bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-            <div class="flex justify-between items-center h-full">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
                     <a href="/" class="flex items-center gap-2 hover:opacity-80 transition">
                     <div class="w-8 h-8 bg-reddit-orange rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">R</div>
                     <span class="text-lg sm:text-xl font-bold tracking-tight">RedGrowth<span class="text-gray-400 font-normal hidden sm:inline">.partners</span></span>
@@ -511,9 +507,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </footer>
 
     <script>
+        lucide.createIcons();
+
         // AI Section Auto-Carousel Logic with Manual Controls
         document.addEventListener("DOMContentLoaded", function() {
-            lucide.createIcons();
             const slides = document.querySelectorAll('.ai-slide');
             const dots = document.querySelectorAll('.ai-dot');
             let currentSlide = 0;
