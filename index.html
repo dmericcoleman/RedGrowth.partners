@@ -187,10 +187,10 @@
                     <img src="reddit-post-ai-overview-desktop.webp" alt="Reddit AI Overview" loading="lazy" width="1208" height="675" class="hidden sm:block w-full h-full object-contain object-center cursor-zoom-in hover:opacity-80 transition-opacity duration-200" onclick="openModal(this.src)">
                 </div>
 
-                <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-3 z-20">
-                    <button class="ai-dot w-3 h-3 rounded-full bg-orange-600 transition-colors cursor-pointer hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500" aria-label="Slide 1"></button>
-                    <button class="ai-dot w-3 h-3 rounded-full bg-gray-300 transition-colors cursor-pointer hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500" aria-label="Slide 2"></button>
-                    <button class="ai-dot w-3 h-3 rounded-full bg-gray-300 transition-colors cursor-pointer hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500" aria-label="Slide 3"></button>
+                <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-5 z-20">
+                    <button class="ai-dot relative after:content-[''] after:absolute after:-inset-3 w-3 h-3 rounded-full bg-orange-600 transition-colors cursor-pointer hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500" aria-label="Slide 1"></button>
+                    <button class="ai-dot relative after:content-[''] after:absolute after:-inset-3 w-3 h-3 rounded-full bg-gray-300 transition-colors cursor-pointer hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500" aria-label="Slide 2"></button>
+                    <button class="ai-dot relative after:content-[''] after:absolute after:-inset-3 w-3 h-3 rounded-full bg-gray-300 transition-colors cursor-pointer hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-orange-500" aria-label="Slide 3"></button>
                 </div>
             </div>
         </div>
@@ -399,8 +399,8 @@
                     </ul>
                     <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
                         <p class="text-sm font-bold text-white mb-2">Direct Access:</p>
-                        <p class="text-gray-400 text-sm"><a href="mailto:eric@redgrowth.partners" class="hover:text-white transition">eric@redgrowth.partners</a></p>
-                        <p class="text-gray-400 text-sm"><a href="tel:+19169076120" class="hover:text-white transition">+1 (916) 907-6120</a></p>
+                        <p class="text-gray-400 text-sm"><a href="mailto:eric@redgrowth.partners" class="inline-block py-2 hover:text-white transition">eric@redgrowth.partners</a></p>
+                        <p class="text-gray-400 text-sm"><a href="tel:+19169076120" class="inline-block py-2 hover:text-white transition">+1 (916) 907-6120</a></p>
                     </div>
                 </div>
 
@@ -408,15 +408,15 @@
                     <form id="auditForm" action="https://formspree.io/f/mreodvvb" method="POST">
                         <div class="mb-4">
                             <label for="fullName" class="block text-xs font-bold text-gray-700 uppercase mb-2">Full Name</label>
-                            <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-orange-500 outline-none" placeholder="Jane Doe">
+                            <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-4 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-orange-500 outline-none" placeholder="Jane Doe">
                         </div>
                         <div class="mb-4">
                             <label for="workEmail" class="block text-xs font-bold text-gray-700 uppercase mb-2">Work Email</label>
-                            <input type="email" id="workEmail" name="workEmail" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-orange-500 outline-none" placeholder="jane@company.com">
+                            <input type="email" id="workEmail" name="workEmail" required class="w-full px-4 py-4 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-orange-500 outline-none" placeholder="jane@company.com">
                         </div>
                         <div class="mb-6">
                             <label for="budget" class="block text-xs font-bold text-gray-700 uppercase mb-2">Monthly Marketing Budget</label>
-                            <select id="budget" name="budget" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-orange-500 outline-none">
+                            <select id="budget" name="budget" required class="w-full px-4 py-4 rounded-lg bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-orange-500 outline-none">
                                 <option value="$1k - $5k">$1k - $5k</option>
                                 <option value="$5k - $10k">$5k - $10k</option>
                                 <option value="$10k+">$10k+</option>
@@ -440,11 +440,11 @@
                 <span class="text-lg font-bold text-white">RedGrowth.partners</span>
                 <p class="text-xs mt-1">© 2026 All rights reserved.</p>
             </div>
-            <div class="flex gap-6 text-sm">
-                <a href="privacy.html" class="hover:text-white transition">Privacy</a>
-                <a href="terms.html" class="hover:text-white transition">Terms</a>
-                <a href="https://twitter.com/redgrowth.partners" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Twitter</a>
-                <a href="https://linkedin.com/in/redgrowth.partners" target="_blank" rel="noopener noreferrer" class="hover:text-white">LinkedIn</a>
+            <div class="flex flex-wrap gap-x-6 gap-y-4 text-sm justify-center sm:justify-start">
+                <a href="privacy.html" class="inline-block py-2 hover:text-white transition">Privacy</a>
+                <a href="terms.html" class="inline-block py-2 hover:text-white transition">Terms</a>
+                <a href="https://twitter.com/redgrowth.partners" target="_blank" rel="noopener noreferrer" class="inline-block py-2 hover:text-white transition">Twitter</a>
+                <a href="https://linkedin.com/in/redgrowth.partners" target="_blank" rel="noopener noreferrer" class="inline-block py-2 hover:text-white transition">LinkedIn</a>
             </div>
         </div>
     </footer>
@@ -505,7 +505,7 @@
   <div id="imageModal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-300" onclick="closeModal()">
       <div class="relative max-w-[95vw] max-h-[95vh]">
           <img id="modalImage" src="" alt="Enlarged Preview" class="max-w-full max-h-[95vh] rounded-xl shadow-2xl object-contain cursor-zoom-out" onclick="event.stopPropagation(); closeModal();">
-          <button onclick="closeModal()" class="absolute -top-4 -right-4 w-8 h-8 bg-white text-black rounded-full flex items-center justify-center font-bold shadow-lg hover:bg-gray-200 cursor-pointer z-50 transition-colors" aria-label="Close image">✕</button>
+          <button onclick="closeModal()" class="absolute -top-6 -right-6 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center font-bold text-lg shadow-lg hover:bg-gray-200 cursor-pointer z-50 transition-colors" aria-label="Close image">✕</button>
       </div>
   </div>
 
