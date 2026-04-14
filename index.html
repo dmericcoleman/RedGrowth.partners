@@ -22,9 +22,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
         .reddit-orange { color: #FF4500; }
@@ -507,10 +514,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </footer>
 
     <script>
-        lucide.createIcons();
-
         // AI Section Auto-Carousel Logic with Manual Controls
         document.addEventListener("DOMContentLoaded", function() {
+            lucide.createIcons();
             const slides = document.querySelectorAll('.ai-slide');
             const dots = document.querySelectorAll('.ai-dot');
             let currentSlide = 0;
