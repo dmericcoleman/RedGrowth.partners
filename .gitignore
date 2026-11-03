@@ -1,0 +1,16 @@
+# Dependencies & Tools
+node_modules/
+tools/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.agents/
+designmonks_raw.html
+test_screenshots/

@@ -3,61 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Reddit Growth Partners</title>
+    <title>Privacy Policy | RedGrowth.partners</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .reddit-orange { color: #FF4500; }
-        .bg-reddit-orange { background-color: #FF4500; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
         html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased flex flex-col min-h-screen">
+<body class="bg-[#0B1120] text-slate-100 antialiased flex flex-col min-h-screen selection:bg-coral selection:text-[#0B1120] overflow-x-hidden">
 
-    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="/" class="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition">
-                    <img src="assets/images/logo-nav.webp" alt="RedGrowth.partners Logo" width="150" height="150" class="w-8 h-8 sm:w-9 sm:h-9 object-contain flex-shrink-0">
-                    <span class="text-lg sm:text-xl font-bold tracking-tight">RedGrowth<span class="text-gray-500 font-normal hidden sm:inline">.partners</span></span>
+    <header class="sticky top-0 z-50 bg-[#0B1120]/95 backdrop-blur-md border-b border-white/10 transition-all">
+        <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 py-4 flex items-center justify-between relative">
+            <a href="/" class="flex items-center gap-2 cursor-pointer shrink-0" aria-label="RedGrowth.partners Home">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.5 20L10.5 4H15L9 20H4.5Z" fill="#FF6441"/>
+                    <path d="M11 20L15.5 8H20.5L16 20H11Z" fill="#FFFFFF"/>
+                </svg>
+                <span class="text-[17px] sm:text-[22px] tracking-tight text-white">
+                    <span class="font-bold">RedGrowth</span><span class="text-slate-400 font-normal">.partners</span>
+                </span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+                <a href="/#framework" class="text-[15px] font-medium text-slate-300 hover:text-white transition-colors">AEO Framework</a>
+                <a href="/#compliance" class="text-[15px] font-medium text-slate-300 hover:text-white transition-colors">FTC Compliance</a>
+                <a href="/#results" class="text-[15px] font-medium text-slate-300 hover:text-white transition-colors">Case Studies</a>
+                <a href="/#pricing" class="text-[15px] font-medium text-slate-300 hover:text-white transition-colors">Pricing</a>
+                <a href="/#faq" class="text-[15px] font-medium text-slate-300 hover:text-white transition-colors">FAQ</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="/#audit" class="hidden sm:flex bg-coral text-[#0B1120] text-[14px] font-bold py-2.5 px-6 rounded-full items-center gap-2 hover:bg-orange-400 shadow-[0_0_20px_rgba(255,100,65,0.35)] btn-interactive hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(255,100,65,0.45)] active:bg-orange-600">
+                    Run AI Visibility Check &rarr;
                 </a>
-                <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
-                    <a href="index.html#process" class="hover:text-orange-600 transition">Methodology</a>
-                    <a href="index.html#safety" class="hover:text-orange-600 transition">Brand Safety</a>
-                    <a href="index.html#results" class="hover:text-orange-600 transition">Case Studies</a>
-                </div>
-                <a href="https://calendly.com/dmericcoleman/30min" class="bg-black text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold hover:bg-gray-800 transition shadow-lg whitespace-nowrap">
-                    <span class="sm:hidden">Book Call</span>
-                    <span class="hidden sm:inline">Book Strategy Call</span>
+                <button aria-expanded="false" aria-label="Toggle Navigation Menu" class="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1120] active:scale-[0.98]" id="mobileMenuBtn" type="button">
+                    <svg class="w-6 h-6" fill="none" id="hamburgerIcon" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                    <svg class="w-6 h-6 hidden" fill="none" id="closeIcon" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Drawer -->
+            <div class="hidden absolute top-full left-0 w-full bg-[#0B1120]/95 backdrop-blur-md shadow-2xl border-b border-white/10 px-6 py-6 flex-col gap-4 z-50 lg:hidden transform transition-all duration-300 origin-top" id="mobileMenu">
+                <a class="mobile-nav-link text-base font-semibold text-slate-200 hover:text-white py-2 border-b border-white/5" href="/#framework">AEO Framework</a>
+                <a class="mobile-nav-link text-base font-semibold text-slate-200 hover:text-white py-2 border-b border-white/5" href="/#compliance">FTC Compliance</a>
+                <a class="mobile-nav-link text-base font-semibold text-slate-200 hover:text-white py-2 border-b border-white/5" href="/#results">Case Studies</a>
+                <a class="mobile-nav-link text-base font-semibold text-slate-200 hover:text-white py-2 border-b border-white/5" href="/#pricing">Pricing</a>
+                <a class="mobile-nav-link text-base font-semibold text-slate-200 hover:text-white py-2 border-b border-white/5" href="/#faq">FAQ</a>
+                <a class="mobile-nav-link mt-2 w-full bg-coral text-[#0B1120] text-center font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 hover:bg-orange-400 shadow-[0_0_20px_rgba(255,100,65,0.35)] btn-interactive hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(255,100,65,0.45)] active:bg-orange-600" href="/#audit">
+                    Run AI Visibility Check &rarr;
                 </a>
             </div>
         </div>
-    </nav>
+    </header>
+    <div id="mobileMenuBackdrop" class="fixed inset-0 bg-[#0B1120]/70 backdrop-blur-sm z-40 hidden lg:hidden" aria-hidden="true"></div>
 
-    <main class="flex-grow pt-32 pb-20 px-4">
-        <div class="max-w-4xl mx-auto bg-white p-8 sm:p-12 rounded-2xl shadow-sm border border-gray-100">
-            <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">Privacy Policy</h1>
-            <p class="text-sm text-gray-500 mb-8 pb-8 border-b border-gray-100">Last Updated: April 14, 2026</p>
+    <main class="flex-grow pt-10 sm:pt-16 pb-20 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto bg-[#15213A]/90 backdrop-blur-md p-6 sm:p-8 md:p-12 rounded-2xl shadow-2xl border border-white/10 text-slate-300">
+            <h1 class="text-3xl sm:text-4xl font-extrabold mb-4 text-white tracking-tight">Privacy Policy</h1>
+            <p class="text-sm text-slate-400 mb-8 pb-8 border-b border-white/10">Last Updated: April 14, 2026</p>
 
-            <div class="space-y-8 text-gray-600 leading-relaxed">
+            <div class="space-y-8 text-slate-300 leading-relaxed">
                 <section>
-                    <h2 class="text-xl font-bold text-gray-900 mb-3">1. Information We Collect</h2>
+                    <h2 class="text-xl font-bold text-white mb-3">1. Information We Collect</h2>
                     <p class="mb-3">We collect information that you provide directly to us when you fill out a contact form, request an audit, or communicate with us via email. This may include:</p>
                     <ul class="list-disc pl-6 space-y-2">
-                        <li><strong>Personal Information:</strong> Name, email address, phone number, and company name.</li>
-                        <li><strong>Project Details:</strong> Marketing budget, target audience, and business objectives.</li>
-                        <li><strong>Automatically Collected Data:</strong> IP addresses, browser types, and standard analytics data collected via cookies when you visit our site.</li>
+                        <li><strong class="text-white">Personal Information:</strong> Name, email address, phone number, and company name.</li>
+                        <li><strong class="text-white">Project Details:</strong> Marketing budget, target audience, and business objectives.</li>
+                        <li><strong class="text-white">Automatically Collected Data:</strong> IP addresses, browser types, and standard analytics data collected via cookies when you visit our site.</li>
                     </ul>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-bold text-gray-900 mb-3">2. How We Use Your Information</h2>
+                    <h2 class="text-xl font-bold text-white mb-3">2. How We Use Your Information</h2>
                     <p class="mb-3">We use the information we collect primarily to provide, maintain, and improve our services. Specifically, we use it to:</p>
                     <ul class="list-disc pl-6 space-y-2">
                         <li>Perform the requested subreddit audits and marketing analyses.</li>
@@ -67,56 +91,130 @@
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-bold text-gray-900 mb-3">3. Cookies and Tracking Technologies</h2>
+                    <h2 class="text-xl font-bold text-white mb-3">3. Cookies and Tracking Technologies</h2>
                     <p>We use standard cookies and tracking technologies to track activity on our website. Cookies are files with a small amount of data which may include an anonymous unique identifier. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-bold text-gray-900 mb-3">4. Information Sharing and Disclosure</h2>
+                    <h2 class="text-xl font-bold text-white mb-3">4. Information Sharing and Disclosure</h2>
                     <p>We do not sell, trade, or rent your personal information to third parties. We only share information with trusted third-party service providers (such as form processors like Formspree or scheduling tools like Calendly) strictly for the purpose of facilitating our business operations. These providers are bound by strict confidentiality agreements.</p>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-bold text-gray-900 mb-3">5. Data Security</h2>
+                    <h2 class="text-xl font-bold text-white mb-3">5. Data Security</h2>
                     <p>We implement appropriate technical and organizational security measures to protect your data against unauthorized access, alteration, disclosure, or destruction. However, please be aware that no method of transmission over the internet or electronic storage is 100% secure.</p>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-bold text-gray-900 mb-3">6. Your Data Rights</h2>
+                    <h2 class="text-xl font-bold text-white mb-3">6. Your Data Rights</h2>
                     <p>Depending on your location, you may have the right to access, update, or delete the personal information we hold about you. If you wish to exercise these rights, please contact us directly using the information provided below.</p>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-bold text-gray-900 mb-3">7. Contact Us</h2>
+                    <h2 class="text-xl font-bold text-white mb-3">7. Contact Us</h2>
                     <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-                    <p class="mt-2"><strong>Email:</strong> <a href="mailto:eric@redgrowth.partners" class="text-orange-600 hover:underline">eric@redgrowth.partners</a></p>
+                    <p class="mt-2"><strong class="text-white">Email:</strong> <a href="mailto:eric@redgrowth.partners" class="text-coral hover:underline">eric@redgrowth.partners</a></p>
                 </section>
             </div>
         </div>
     </main>
 
-    <footer class="bg-black text-gray-500 py-12 border-t border-gray-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center">
-            <div class="mb-4 sm:mb-0">
-                <span class="text-lg font-bold text-white">RedGrowth.partners</span>
-                <p class="text-xs mt-1">© 2026 All rights reserved.</p>
+    <footer class="py-8 bg-[#0B1120] text-slate-400 text-sm border-t border-white/10 mt-auto">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 flex items-center gap-1">
+                <a href="/" class="flex items-center gap-1 hover:opacity-90 transition-opacity">
+                    <span class="font-bold text-white">RedGrowth</span><span class="text-slate-400">.partners</span>
+                </a>
+                <span class="text-xs text-slate-400 ml-4">&copy; 2026 All rights reserved.</span>
             </div>
-            <div class="flex flex-wrap gap-x-6 gap-y-4 text-sm justify-center sm:justify-start">
-                <a href="privacy.html" class="inline-block py-2 hover:text-white transition">Privacy</a>
-                <a href="terms.html" class="inline-block py-2 hover:text-white transition">Terms</a>
-                <a href="https://twitter.com/redgrowth.partners" target="_blank" rel="noopener noreferrer" class="inline-block py-2 hover:text-white transition">Twitter</a>
-                <a href="https://linkedin.com/in/redgrowth.partners" target="_blank" rel="noopener noreferrer" class="inline-block py-2 hover:text-white transition">LinkedIn</a>
+            <div class="flex flex-wrap gap-4 sm:gap-6">
+                <a class="hover:text-white transition" href="privacy.html">Privacy Policy</a>
+                <a class="hover:text-white transition" href="terms.html">Terms of Service</a>
+                <a class="hover:text-white transition" href="https://calendly.com/dmericcoleman/30min" rel="noopener" target="_blank">Schedule Call</a>
+                <a class="hover:text-white transition" href="https://www.linkedin.com/in/dmericcoleman/" rel="noopener" target="_blank">LinkedIn</a>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/19169076120?text=Hello!%20I%20want%20to%20discuss%20reddit%20strategy." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-      <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-2.1-3.6 2.1-3.2 7.6-14.1 1.4-2.8 2.8-5.2 1.4-7.6-1.4-2.4-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-      </svg>
-    </a>
-
     <script>
+        // Mobile Drawer Interaction
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileBackdrop = document.getElementById('mobileMenuBackdrop');
+        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        function openDrawer() {
+            if (!mobileMenu) return;
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            if (mobileBackdrop) mobileBackdrop.classList.remove('hidden');
+            if (hamburgerIcon) hamburgerIcon.classList.add('hidden');
+            if (closeIcon) closeIcon.classList.remove('hidden');
+            if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+            document.body.classList.add('overflow-hidden');
+
+            // Focus first link in drawer (F11)
+            const firstLink = mobileMenu.querySelector('a');
+            if (firstLink) firstLink.focus();
+        }
+
+        function closeDrawer(restoreFocus = false) {
+            if (!mobileMenu) return;
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            if (mobileBackdrop) mobileBackdrop.classList.add('hidden');
+            if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+            if (closeIcon) closeIcon.classList.add('hidden');
+            if (mobileBtn) mobileBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            document.body.classList.remove('overflow-hidden');
+
+            // Restore focus to hamburger button (F11)
+            if (restoreFocus && mobileBtn) {
+                mobileBtn.focus();
+            }
+        }
+
+        if (mobileBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (mobileMenu.classList.contains('hidden')) {
+                    openDrawer();
+                } else {
+                    closeDrawer(true);
+                }
+            });
+
+            if (mobileBackdrop) {
+                mobileBackdrop.addEventListener('click', () => closeDrawer(true));
+            }
+
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+                        closeDrawer(true);
+                    }
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    closeDrawer(true);
+                }
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => closeDrawer(false));
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 1024) {
+                    closeDrawer(false);
+                }
+            });
+        }
         let trackingLoaded = false;
         function loadTracking() {
             if (trackingLoaded) return;

@@ -3,27 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffffff">
-    <title>Page Not Found | Reddit Growth Partners</title>
+    <meta name="theme-color" content="#0B1120">
+    <title>Page Not Found | RedGrowth.partners</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4 text-center antialiased">
-    <div class="max-w-md w-full bg-white p-8 sm:p-10 rounded-2xl shadow-sm border border-gray-100">
-        <div class="w-16 h-16 bg-[#FF4500] rounded-full flex items-center justify-center text-white font-bold mx-auto mb-6 text-2xl flex-shrink-0">R</div>
-        <h1 class="text-4xl font-extrabold text-gray-900 mb-2">404</h1>
-        <p class="text-gray-600 mb-8 text-sm sm:text-base">It looks like this page got lost in the feed.</p>
-        <a href="/" class="block w-full bg-black text-white font-bold py-3 rounded-lg hover:bg-gray-800 transition shadow-md">
-            Return to Homepage
-        </a>
-    </div>
+<body class="bg-[#0B1120] text-slate-100 flex flex-col min-h-screen antialiased selection:bg-coral selection:text-[#0B1120] overflow-x-hidden">
+    <header class="sticky top-0 z-50 bg-[#0B1120]/95 backdrop-blur-md border-b border-white/10">
+        <div class="w-full max-w-[1400px] mx-auto px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 cursor-pointer" aria-label="RedGrowth.partners Home">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 shrink-0" viewBox="0 0 24 24" fill="none">
+                    <path d="M4.5 20L10.5 4H15L9 20H4.5Z" fill="#FF6441"/>
+                    <path d="M11 20L15.5 8H20.5L16 20H11Z" fill="#FFFFFF"/>
+                </svg>
+                <span class="text-[17px] sm:text-[22px] tracking-tight text-white font-bold">RedGrowth<span class="text-slate-400 font-normal">.partners</span></span>
+            </a>
+            <a href="/" class="shrink-0 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-semibold py-1.5 px-3 sm:py-2 sm:px-4 rounded-full border border-white/40 btn-interactive hover:-translate-y-0.5" aria-label="Return Home">
+                &larr; <span class="hidden sm:inline">Return </span>Home
+            </a>
+        </div>
+    </header>
+    <main class="flex-grow flex items-center justify-center p-4 sm:p-6 my-auto">
+        <div class="max-w-md w-full bg-[#15213A]/90 backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-2xl shadow-2xl border border-white/10 text-center relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-coral/15 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="flex justify-center mb-6">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                    <path d="M4.5 20L10.5 4H15L9 20H4.5Z" fill="#FF6441"/>
+                    <path d="M11 20L15.5 8H20.5L16 20H11Z" fill="#FFFFFF"/>
+                </svg>
+            </div>
+            <h1 class="text-5xl sm:text-6xl font-black text-white mb-2 tracking-tight">404</h1>
+            <h2 class="text-xl font-bold text-slate-200 mb-2">Page Not Found</h2>
+            <p class="text-slate-300 mb-8 text-sm sm:text-base leading-relaxed">The page you are looking for does not exist, has been removed, or is temporarily unavailable.</p>
+            <div class="space-y-3">
+                <a href="/" class="block w-full bg-coral hover:bg-orange-400 text-[#0B1120] font-bold py-3.5 px-6 rounded-full shadow-lg btn-interactive hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(255,100,65,0.35)] active:scale-[0.98] active:bg-orange-600">Return to Homepage</a>
+                <a href="https://calendly.com/dmericcoleman/30min" target="_blank" rel="noopener" class="block w-full bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-6 rounded-full border border-white/40 text-sm btn-interactive hover:-translate-y-0.5">Schedule Strategy Call</a>
+            </div>
+        </div>
+    </main>
+    <footer class="py-8 bg-[#0B1120] text-slate-400 text-sm border-t border-white/10 mt-auto">
+        <div class="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 flex items-center gap-1">
+                <a href="/" class="flex items-center gap-1 hover:opacity-90 transition-opacity">
+                    <span class="font-bold text-white">RedGrowth</span><span class="text-slate-400">.partners</span>
+                </a>
+                <span class="text-xs text-slate-400 ml-4">&copy; 2026 All rights reserved.</span>
+            </div>
+            <div class="flex flex-wrap gap-4 sm:gap-6">
+                <a class="hover:text-white transition" href="privacy.html">Privacy Policy</a>
+                <a class="hover:text-white transition" href="terms.html">Terms of Service</a>
+                <a class="hover:text-white transition" href="https://calendly.com/dmericcoleman/30min" rel="noopener" target="_blank">Schedule Call</a>
+                <a class="hover:text-white transition" href="https://www.linkedin.com/in/dmericcoleman/" rel="noopener" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Lazy Tracking -->
     <script>
         let trackingLoaded = false;
         function loadTracking() {

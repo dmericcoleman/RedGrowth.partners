@@ -1,4 +1,11 @@
 {
+  "name": "redgrowth.partners",
+  "version": "1.0.0",
+  "description": "B2B Community Marketing & AI Search Visibility Agency",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --watch"
+  },
   "dependencies": {
     "tailwindcss": "^3.4.19"
   }
