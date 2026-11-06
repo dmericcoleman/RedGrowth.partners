@@ -1,0 +1,49 @@
+# ==============================================================================
+# RedGrowth.partners — Cloudflare Pages HTTP Response Headers Specification
+# Authoritative Version: Milestone 1 / Feature 7
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Global Rule: Strict HTML Revalidation & Core Security Headers
+# Applied to all routes by default.
+# ------------------------------------------------------------------------------
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cache-Control: public, max-age=0, must-revalidate
+
+# ------------------------------------------------------------------------------
+# 2. Static Asset Directory: 1-Year Immutable Caching & CORS
+# Targets all versioned stylesheets, scripts, images, and fonts.
+# ------------------------------------------------------------------------------
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# ------------------------------------------------------------------------------
+# 3. Root Static Media Assets: 1-Year Immutable Caching & CORS
+# Explicitly targets root favicons, Apple touch icons, and social sharing cards.
+# ------------------------------------------------------------------------------
+/favicon-32x32.png
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/og-image.jpg
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# ------------------------------------------------------------------------------
+# 4. Search Engine Crawler Metadata: 1-Day Cache with Stale-While-Revalidate
+# Ensures robots and sitemaps are refreshed daily by search engine bots.
+# ------------------------------------------------------------------------------
+/robots.txt
+  Cache-Control: public, max-age=86400, stale-while-revalidate=86400
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=86400

@@ -91,7 +91,7 @@ class TestChallengerViewportStressAudit:
                     let isClipped = false;
                     while (curr && curr !== document.body && curr !== document.documentElement) {
                         const style = window.getComputedStyle(curr);
-                        if (style.overflowX === 'hidden' || style.overflow === 'hidden') {
+                        if (['hidden', 'auto', 'scroll'].includes(style.overflowX) || ['hidden', 'auto', 'scroll'].includes(style.overflow)) {
                             isClipped = true;
                             break;
                         }
@@ -132,6 +132,7 @@ class TestChallengerViewportStressAudit:
             const buttons = document.querySelectorAll('button, a.btn, a[class*="bg-coral"], a[class*="rounded-full"]');
             const data = [];
             for (const btn of buttons) {
+                if (btn.classList.contains('sr-only') || btn.closest('.sr-only')) continue;
                 const rect = btn.getBoundingClientRect();
                 const style = window.getComputedStyle(btn);
                 if (rect.width > 0 && rect.height > 0 && style.display !== 'none' && style.visibility !== 'hidden') {

@@ -1,0 +1,158 @@
+# ==============================================================================
+# RedGrowth.partners — Apache HTTP Server Configuration (.htaccess)
+# Authoritative Version: Milestone 1 / Feature 7
+# Modules Required: mod_mime, mod_headers, mod_expires, mod_deflate, mod_rewrite
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. MIME Types (mod_mime)
+# Ensure modern web formats (WebP, WOFF2, JSON-LD) are served with proper MIME types
+# ------------------------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType text/html                             .html .htm
+  AddType text/css                              .css
+  AddType text/javascript                       .js
+  AddType application/javascript                .js
+  AddType image/webp                            .webp
+  AddType image/png                             .png
+  AddType image/jpeg                            .jpg .jpeg
+  AddType image/svg+xml                         .svg .svgz
+  AddType image/x-icon                          .ico
+  AddType font/woff                             .woff
+  AddType font/woff2                            .woff2
+  AddType application/ld+json                   .jsonld .json
+  AddType text/xml                              .xml
+  AddType text/plain                            .txt
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 2. Security Headers (mod_headers)
+# Applied to all HTTP responses to harden browser security
+# ------------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Protect against MIME-type confusion attacks
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Prevent clickjacking by denying framing
+  Header always set X-Frame-Options "DENY"
+
+  # Preserve origin privacy across cross-origin navigation
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Disable sensitive hardware APIs (camera, microphone, geolocation)
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+  # Cross-Origin Resource Sharing (CORS) for static assets & web fonts
+  <FilesMatch "\.(css|js|webp|png|jpe?g|gif|svg|ico|woff|woff2|ttf|otf|eot)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+
+  # Cache-Control: Static Assets (1 year immutable)
+  <FilesMatch "\.(css|js|webp|png|jpe?g|gif|svg|ico|woff|woff2|ttf|otf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Cache-Control: HTML Documents (strict revalidation)
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+
+  # Cache-Control: Robots & Sitemap (1-day cache with stale-while-revalidate)
+  <FilesMatch "(robots\.txt|sitemap\.xml)$">
+    Header set Cache-Control "public, max-age=86400, stale-while-revalidate=86400"
+  </FilesMatch>
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 3. Cache Expiration Fallbacks (mod_expires)
+# Backward-compatibility fallback for HTTP/1.0 caches and intermediary proxies
+# ------------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                                "access plus 0 seconds"
+
+  # HTML documents: immediate expiration
+  ExpiresByType text/html                       "access plus 0 seconds"
+
+  # Data & JSON schemas: immediate expiration
+  ExpiresByType application/json                "access plus 0 seconds"
+  ExpiresByType application/ld+json             "access plus 0 seconds"
+
+  # Stylesheets & JavaScript: 1 year
+  ExpiresByType text/css                        "access plus 1 year"
+  ExpiresByType text/javascript                 "access plus 1 year"
+  ExpiresByType application/javascript          "access plus 1 year"
+
+  # Images: 1 year
+  ExpiresByType image/webp                      "access plus 1 year"
+  ExpiresByType image/png                       "access plus 1 year"
+  ExpiresByType image/jpeg                      "access plus 1 year"
+  ExpiresByType image/svg+xml                   "access plus 1 year"
+  ExpiresByType image/x-icon                    "access plus 1 year"
+
+  # Web Fonts: 1 year
+  ExpiresByType font/woff                       "access plus 1 year"
+  ExpiresByType font/woff2                      "access plus 1 year"
+  ExpiresByType application/font-woff2          "access plus 1 year"
+
+  # Search & Metadata: 1 day
+  ExpiresByType text/plain                      "access plus 1 day"
+  ExpiresByType text/xml                        "access plus 1 day"
+  ExpiresByType application/xml                 "access plus 1 day"
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 4. Gzip & Deflate Compression (mod_deflate)
+# Automatically compress text-based and vector assets; skip binary images
+# ------------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/ld+json
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE font/woff
+  AddOutputFilterByType DEFLATE font/woff2
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+
+  # Exclude already compressed image binaries and archives from gzip overhead
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|gz|zip|rar|7z)$ no-gzip dont-vary
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 5. Clean URLs & Custom Error Routing (mod_rewrite)
+# Supports extensionless URLs (/privacy -> privacy.html) and custom 404 handler
+# ------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 301 Redirect direct .html requests to extensionless clean URLs
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+  RewriteRule ^ %1 [R=301,L]
+
+  # Route extensionless requests to the corresponding .html file internally
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*?)/?$ $1.html [L]
+</IfModule>
+
+# Custom 404 error page delivery
+ErrorDocument 404 /404.html

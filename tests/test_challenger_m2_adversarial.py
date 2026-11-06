@@ -73,7 +73,7 @@ class TestChallengerMilestone2Audit:
                         let isClipped = false;
                         while (parent && parent !== document.body && parent !== document.documentElement) {
                             const ps = window.getComputedStyle(parent);
-                            if (ps.overflowX === 'hidden' || ps.overflow === 'hidden') {
+                            if (['hidden', 'auto', 'scroll'].includes(ps.overflowX) || ['hidden', 'auto', 'scroll'].includes(ps.overflow)) {
                                 isClipped = true;
                                 break;
                             }

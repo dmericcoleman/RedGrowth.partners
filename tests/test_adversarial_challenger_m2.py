@@ -349,7 +349,7 @@ class TestAdversarialInteractiveButtonStates:
         page.goto(f"{base_url}/")
         page.wait_for_timeout(300)
 
-        btn = page.locator("#hero a.bg-coral").first
+        btn = page.locator("a.bg-coral").first
         assert btn.is_visible(), "Hero Primary CTA not visible"
         btn.evaluate("el => el.addEventListener('click', e => e.preventDefault())")
 

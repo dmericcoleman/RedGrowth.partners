@@ -79,10 +79,10 @@ class TestAdversarialM2:
             page.wait_for_load_state("networkidle")
 
             expected_profiles = [
-                ("Series B DevSecOps", "$20M ARR"),
-                ("AI Workflow Engine", "$35M ARR"),
-                ("Enterprise Observability", "250+ FTE"),
-                ("High-AOV DTC Brand", "$12M GMV")
+                ("Series B DevSecOps", "+640% Citations"),
+                ("AI Workflow Engine", "Rank #1 Perplexity"),
+                ("Enterprise Observability", "+410% Search Share"),
+                ("High-AOV DTC Brand", "100% FTC Insured")
             ]
 
             for title, metric in expected_profiles:
@@ -298,10 +298,10 @@ class TestAdversarialM2:
             pricing = page.locator("#pricing")
             assert pricing.is_visible()
 
-            # Verify tier prices exist
-            assert pricing.locator("text=$2,500").is_visible(), f"$2,500 pilot price not visible at {viewport_width}px"
-            assert pricing.locator("text=$4,500").is_visible(), f"$4,500 retainer price not visible at {viewport_width}px"
-            assert pricing.locator("text=$7,500").is_visible(), f"$7,500 category price not visible at {viewport_width}px"
+            # Verify tier prices exist (using .first to avoid strict mode collision with comparison matrix)
+            assert pricing.locator("text=$2,500").first.is_visible(), f"$2,500 pilot price not visible at {viewport_width}px"
+            assert pricing.locator("text=$4,500").first.is_visible(), f"$4,500 retainer price not visible at {viewport_width}px"
+            assert pricing.locator("text=$7,500").first.is_visible(), f"$7,500 category price not visible at {viewport_width}px"
 
             # Verify tier headings
             assert pricing.locator("h3:has-text('AEO Audit & Pilot')").is_visible()

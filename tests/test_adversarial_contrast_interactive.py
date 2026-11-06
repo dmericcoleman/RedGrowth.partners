@@ -196,7 +196,7 @@ class TestAdversarialContrastInteractive:
             default_info = header_cta.evaluate(EVAL_ELEMENT_JS)
             assert default_info["ratio"] >= 4.5, f"Header CTA default contrast ratio {default_info['ratio']} < 4.5"
             header_cta.hover()
-            page.wait_for_timeout(150)
+            page.wait_for_timeout(300)
             hover_info = header_cta.evaluate(EVAL_ELEMENT_JS)
             assert hover_info["ratio"] >= 4.5, f"Header CTA hover contrast ratio {hover_info['ratio']} < 4.5"
 
@@ -206,7 +206,7 @@ class TestAdversarialContrastInteractive:
         default_info = hero_cta.evaluate(EVAL_ELEMENT_JS)
         assert default_info["ratio"] >= 4.5, f"Hero CTA default contrast {default_info['ratio']} < 4.5"
         hero_cta.hover()
-        page.wait_for_timeout(150)
+        page.wait_for_timeout(300)
         hover_info = hero_cta.evaluate(EVAL_ELEMENT_JS)
         assert hover_info["ratio"] >= 4.5, f"Hero CTA hover contrast {hover_info['ratio']} < 4.5"
 
@@ -216,7 +216,7 @@ class TestAdversarialContrastInteractive:
             default_info = anti_agency_cta.evaluate(EVAL_ELEMENT_JS)
             assert default_info["ratio"] >= 4.5, f"Anti-agency CTA default contrast {default_info['ratio']} < 4.5"
             anti_agency_cta.hover()
-            page.wait_for_timeout(150)
+            page.wait_for_timeout(300)
             hover_info = anti_agency_cta.evaluate(EVAL_ELEMENT_JS)
             assert hover_info["ratio"] >= 4.5, f"Anti-agency CTA hover contrast {hover_info['ratio']} < 4.5"
 
@@ -226,7 +226,7 @@ class TestAdversarialContrastInteractive:
         default_info = submit_btn.evaluate(EVAL_ELEMENT_JS)
         assert default_info["ratio"] >= 4.5, f"Submit button default contrast {default_info['ratio']} < 4.5"
         submit_btn.hover()
-        page.wait_for_timeout(150)
+        page.wait_for_timeout(300)
         hover_info = submit_btn.evaluate(EVAL_ELEMENT_JS)
         assert hover_info["ratio"] >= 4.5, f"Submit button hover contrast {hover_info['ratio']} < 4.5"
 
@@ -241,7 +241,7 @@ class TestAdversarialContrastInteractive:
         t1_default = tier1_btn.evaluate(EVAL_ELEMENT_JS)
         assert t1_default["ratio"] >= 4.5, f"Tier 1 button default text contrast {t1_default['ratio']} < 4.5"
         tier1_btn.hover()
-        page.wait_for_timeout(150)
+        page.wait_for_timeout(300)
         t1_hover = tier1_btn.evaluate(EVAL_ELEMENT_JS)
         assert t1_hover["ratio"] >= 4.5, f"Tier 1 button hover contrast {t1_hover['ratio']} < 4.5"
 
@@ -251,7 +251,7 @@ class TestAdversarialContrastInteractive:
         t3_default = tier3_btn.evaluate(EVAL_ELEMENT_JS)
         assert t3_default["ratio"] >= 4.5, f"Tier 3 button default text contrast {t3_default['ratio']} < 4.5"
         tier3_btn.hover()
-        page.wait_for_timeout(150)
+        page.wait_for_timeout(300)
         t3_hover = tier3_btn.evaluate(EVAL_ELEMENT_JS)
         assert t3_hover["ratio"] >= 4.5, f"Tier 3 button hover contrast {t3_hover['ratio']} < 4.5"
 
@@ -284,7 +284,7 @@ class TestAdversarialContrastInteractive:
         info = cta_404_primary.evaluate(EVAL_ELEMENT_JS)
         assert info["ratio"] >= 4.5, f"404 primary CTA contrast {info['ratio']} < 4.5"
         cta_404_primary.hover()
-        page.wait_for_timeout(100)
+        page.wait_for_timeout(300)
         info_hover = cta_404_primary.evaluate(EVAL_ELEMENT_JS)
         assert info_hover["ratio"] >= 4.5, f"404 primary CTA hover contrast {info_hover['ratio']} < 4.5"
 

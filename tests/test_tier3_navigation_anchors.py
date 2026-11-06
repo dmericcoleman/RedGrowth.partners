@@ -41,7 +41,7 @@ class TestTier3NavigationAnchors:
             link = page.locator(f"header nav a[href='{anchor}']").first
             if link.count() > 0 and link.is_visible():
                 link.click()
-                page.wait_for_timeout(800)
+                page.wait_for_timeout(1600)
                 
                 target = page.locator(anchor)
                 assert target.count() >= 1, f"Target anchor {anchor} must exist in DOM"

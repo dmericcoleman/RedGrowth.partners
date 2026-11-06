@@ -95,6 +95,7 @@ class TestEmpiricalMultiViewportMatrix:
             const elements = document.querySelectorAll('h1, h2, h3, p, a, button, [role="button"]');
             for (const el of elements) {
                 if (!el.offsetParent) continue; // skip invisible
+                if (el.classList.contains('sr-only') || el.closest('.sr-only')) continue;
                 const style = window.getComputedStyle(el);
                 if (style.display === 'none' || style.visibility === 'hidden') continue;
                 

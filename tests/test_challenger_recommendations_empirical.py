@@ -50,15 +50,15 @@ class TestSnippetEmpiricalChecks:
         # Check if index.html uses orange-500
         assert "bg-orange-500" in index_html or "text-orange-500" in index_html
 
-        # Snippet A defines coral, but completely omits orange
-        assert "orange:" not in snippet_a, "Snippet A omitted orange color definition"
+        # Snippet A defines coral and preserves existing brand orange
+        assert "orange:" in snippet_a, "Snippet A preserves orange color definition"
 
         # 2. Existing tailwind defines custom gray (800, 900)
-        assert "gray:" not in snippet_a, "Snippet A omitted custom gray definition"
+        assert "gray:" in snippet_a, "Snippet A preserves custom gray definition"
 
         # 3. Existing tailwind defines animations: fade-in-up, fade-in
         assert "fadeInUp" in current_tailwind_text
-        assert "fadeInUp" not in snippet_a, "Snippet A wiped out existing fadeInUp keyframes"
+        assert "fadeInUp" in snippet_a, "Snippet A preserves existing fadeInUp keyframes"
 
     def test_marquee_snippet_d_mathematical_loop_discontinuity(self, page: Page):
         """
@@ -172,10 +172,9 @@ class TestSnippetEmpiricalChecks:
         assert match
         snippet_b = match.group(1)
 
-        # Notice Snippet B includes @media (prefers-reduced-motion) but NO @supports fallback
-        # for browsers that do not support @property syntax!
-        assert "@supports" not in snippet_b, (
-            "Snippet B lacks @supports fallback for CSS Houdini @property, risking static or broken borders on unsupported browsers"
+        # Verify Snippet B includes @supports fallback for Houdini unsupported browsers
+        assert "@supports" in snippet_b, (
+            "Snippet B must provide @supports fallback for CSS Houdini @property"
         )
 
     def test_lenis_snippet_c_error_resilience(self, page: Page):
@@ -183,7 +182,7 @@ class TestSnippetEmpiricalChecks:
         Verify Snippet C behavior if CDN fails or is blocked:
         Executing new Lenis() without window.Lenis guard triggers an unhandled ReferenceError.
         """
-        page.goto(page._base_url)
+        page.goto("about:blank")
 
         # Simulate executing Snippet C without external Lenis library loaded:
         res = page.evaluate("""() => {
@@ -215,8 +214,7 @@ class TestSnippetEmpiricalChecks:
         assert match
         snippet_e = match.group(1)
 
-        # Snippet E claims:
-        # <a href="https://claude.ai/new?q=Evaluate%20https%3A%2F%2Fredgrowth.partners%2F..."
-        assert "https://claude.ai/new?q=" in snippet_e
         # In reality, Claude.ai ignores ?q= URL parameters on /new (it only accepts clipboard or manual entry).
-        # Linking users to claude.ai/new?q=... drops them onto a blank chat box without executing the prompt!
+        # Snippet E uses clipboard copy fallback and avoids unsupported claude.ai/new?q=
+        assert "https://claude.ai/new?q=" not in snippet_e, "Snippet E must not use unsupported claude ?q= parameter"
+        assert "copyClaudePrompt" in snippet_e, "Snippet E must use clipboard copy fallback"

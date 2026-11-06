@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Feature 1: CSS Smooth Scroll Collision Override for Lenis */
+html.lenis {
+  scroll-behavior: auto !important;
+}
+
+
 /* CSS Houdini typed property for GPU-composited angle rotation */
 @property --_rg-gradient-angle {
   syntax: "<angle>";
@@ -15,16 +21,14 @@
 }
 
 @keyframes soundwave-pulse {
-  0%, 100% { height: 6px; }
-  50% { height: 20px; }
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1.0); }
 }
 
 @layer components {
   /* Existing glass cards preserved */
   .glass-card {
-    background-color: rgba(21, 33, 58, 0.8);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(21, 33, 58, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   }
@@ -38,9 +42,7 @@
 
   /* Elevated Dual-Border Glass Surface */
   .glass-card-elevated {
-    background-color: rgba(21, 33, 58, 0.75);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(21, 33, 58, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 
       0 12px 32px 0 rgba(0, 0, 0, 0.35),
@@ -109,8 +111,11 @@
     box-shadow: 0 0 25px -4px rgba(255, 100, 65, 0.25) !important;
   }
 
-  /* Soundwave Equalizer Bars */
+  /* Soundwave Equalizer Bars (GPU scaleY layout reflow elimination) */
   .soundwave-bar {
+    height: 20px;
+    transform-origin: bottom;
+    will-change: transform;
     animation: soundwave-pulse 1.2s ease-in-out infinite;
   }
   .soundwave-bar:nth-child(2) { animation-delay: 0.2s; }
@@ -128,6 +133,17 @@
   }
   .btn-interactive {
     @apply transition-all duration-200 ease-out active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1120];
+  }
+  .timeline-track-gradient,
+  .bg-timeline-gradient {
+    background: linear-gradient(to bottom, #1e293b 0%, #3b82f6 20%, #a855f7 50%, #f97316 80%, #1e293b 100%);
+  }
+  /* Feature 6: Ambient Glow Blobs GPU Composited Layer Promotion */
+  .ambient-blur-blob {
+    filter: blur(48px) !important;
+    transform: translate(var(--tw-translate-x, 0), var(--tw-translate-y, 0)) translateZ(0.001px);
+    will-change: transform;
+    contain: strict;
   }
 }
 
